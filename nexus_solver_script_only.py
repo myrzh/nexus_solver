@@ -15,7 +15,7 @@ if __name__ == "__main__":
     logfile = open(os.getenv("APPDATA")+"/.minecraft/logs/latest.log", "r")
     loglines = follow(logfile)
     for line in loglines:
-        if "[main/INFO]: [CHAT]    Решите пример:" in line and "?" not in line:
+        if "[main/INFO]: [CHAT]    Решите пример:" in line and "?" not in line: # плохой костыль, надо сделать нормально
             line = line[49:len(line)-1]
             print(line)
             print(eval(line))
