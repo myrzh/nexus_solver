@@ -13,6 +13,7 @@ def follow(thefile):
         yield line
 
 print("Welcome to NexusSolver")
+print("NOTE: tasks with unusual symblols (they mostly look like 45 + 45) can't be solved because of UTF-8 limits")
 
 while True:
     try:
@@ -28,7 +29,7 @@ while True:
             break
 
 if __name__ == "__main__":
-    logfile = open(os.getenv("APPDATA")+"/.minecraft/logs/latest.log", "r")
+    logfile = open(os.getenv("APPDATA")+"/.minecraft/logs/latest.log", "r") # won't work on linux, of course
     loglines = follow(logfile)
     print("Waiting for tasks...")
     for line in loglines:
