@@ -13,15 +13,27 @@ def follow(thefile):
         yield line
 
 print("Welcome to NexusSolver")
-delay = int(input("Enter the delay time (seconds): "))
+
+while True:
+    try:
+        delay = int(input("Enter the delay time (seconds): "))
+    except:
+        print("Incorrect input")
+        pass
+    else:
+        if delay < 0:
+            print("Incorrect input")
+            pass
+        else:
+            break
 
 if __name__ == "__main__":
     logfile = open(os.getenv("APPDATA")+"/.minecraft/logs/latest.log", "r")
     loglines = follow(logfile)
     print("Waiting for tasks...")
     for line in loglines:
-        if "[main/INFO]: [CHAT]    Решите пример:" in line and "?" not in line: # workaround
-            line = line[49:len(line)-1]
+        if line.find("Решите пример:") != -1 and "?" not in line: # workaround
+            line = line[line.find("Решите пример:") + 15:len(line) - 1]
             print('Task caught: ' + line)
             print('Answer: ' + str(eval(line)))
             playsound("C:/Windows/Media/Windows Hardware Fail.wav")
