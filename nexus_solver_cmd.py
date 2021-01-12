@@ -36,7 +36,7 @@ if __name__ == "__main__":
             line = line[line.find("Решите пример:") + 15:len(line) - 1]
             print('Task caught: ' + line)
             print('Answer: ' + str(eval(line)))
-            playsound("C:/Windows/Media/Windows Hardware Fail.wav")
+            playsound("pig.mp3")
             time.sleep(delay)
             pyautogui.press('t')
             pyautogui.write(str(eval(line)))
