@@ -11,7 +11,7 @@ def follow(thefile):
             continue
         yield line
 
-if __name__ == "__main__": # в душе не ебу зачем это нужно, вот серьезно
+if __name__ == "__main__":
     logfile = open(os.getenv("APPDATA")+"/.minecraft/logs/latest.log", "r")
     loglines = follow(logfile)
     for line in loglines:
