@@ -32,7 +32,7 @@ if __name__ == "__main__":
     loglines = follow(logfile)
     print("Waiting for tasks...")
     for line in loglines:
-        if line.find("Решите пример:") != -1 and "?" not in line: # workaround
+        if line.find("Решите пример:") != -1 and "?" not in line:
             line = line[line.find("Решите пример:") + 15:len(line) - 1]
             print('Task caught: ' + line)
             print('Answer: ' + str(eval(line)))
