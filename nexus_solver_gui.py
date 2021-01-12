@@ -1,6 +1,6 @@
 from tkinter import *
 root = Tk()
-root.geometry("1280x720")
+root.geometry("300x500")
 
 frame = Frame(root)
 frame.pack()
