@@ -29,7 +29,7 @@ while True:
             break
 
 if __name__ == "__main__": # comment
-    logfile = open(os.getenv("APPDATA")+"/.minecraft/logs/latest.log", "r") # won't work on linux, of course
+    logfile = open(os.getenv("APPDATA")+"/.minecraft/logs/latest.log", "r") # won't work on UNIX, of course
     loglines = follow(logfile)
     print("Waiting for tasks...")
     for line in loglines:
